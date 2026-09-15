@@ -13,7 +13,7 @@ def run_command(command: str) -> str:
     """
     import subprocess
 
-    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    result = subprocess.run(command, shell=False, capture_output=True, text=True)
     if result.returncode != 0:
         raise Exception(f"Command failed with error: {result.stderr.strip()}")
     return result.stdout.strip()
